@@ -1,3 +1,5 @@
+// inspections.js
+
 function formatDate(dateString, options) {
     if (!dateString || dateString === "0001-01-01T00:00:00Z") {
         return "N/A";
@@ -8,7 +10,6 @@ function formatDate(dateString, options) {
     });
 }
 
-// inspections.js
 export function initializeInspectionForm() {
     // Select form elements
     const addInspectionButton = document.querySelector("#addInspectionBtn");

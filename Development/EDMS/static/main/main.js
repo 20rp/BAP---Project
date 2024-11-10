@@ -13,16 +13,14 @@ export function viewNotifications() {
 }
 
 export function clearAllNotificationsHandler() {
-    clearAllNotifications(); // Calls the function in notifications.js
+    clearAllNotifications();
 }
 
 export function clearNotificationHandler(deviceId) {
-    clearNotificationById(deviceId); // Calls the function in notifications.js
+    clearNotificationById(deviceId);
 }
 
 export async function refreshNotificationsHandler() {
-    console.log("Refreshing notifications..."); // Log to check if it's triggered unexpectedly
-
     const refreshButton = document.getElementById("refreshNotificationsBtn");
 
     // Disable the button immediately to prevent further clicks while processing
@@ -96,7 +94,7 @@ export function populateDropdown(
                     select.add(option);
                 });
             });
-            return data; // Return the data for further processing if needed
+            return data;
         })
         .catch((error) => console.error("Error:", error));
 }
@@ -123,8 +121,6 @@ export function showDeleteModal(id, entityType, entityName, currentUserId) {
         // Update modal text
         modalBody.innerHTML = `Are you sure you want to delete ${formattedEntityType}: ${entityName}?`;
         deleteButton.textContent = `Delete ${formattedEntityType}`;
-
-        // Add any additional logic here
 
         // if the current user id is passed, add to delete form action
         if (currentUserId) {

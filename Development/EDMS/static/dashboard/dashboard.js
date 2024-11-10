@@ -6,7 +6,6 @@ import {
     refreshAfterChange,
 } from "/static/main/notifications.js";
 
-// dashboard.js
 import {
     viewDeviceInspections,
     viewInspectionDetails,
@@ -557,7 +556,6 @@ function updatePaginationControls() {
             addPageNumber(totalPages);
         }
     } else {
-        // Desktop pagination (keep your existing logic here)
         if (totalPages <= 7) {
             for (let i = 1; i <= totalPages; i++) {
                 addPageNumber(i);
@@ -1402,7 +1400,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         if (statusInput.value === "Expired") {
             const manufactureDateValue = manufactureDateInput.value;
-            const invalidDate = "0001-01-01"; // Adjust to match "01/01/0001" if needed
+            const invalidDate = "0001-01-01"; // Invalid date for manufacture date
 
             // Only if device type is Fire Extinguisher
             if (selectedText.toLowerCase().includes("fire extinguisher")) {
@@ -1611,7 +1609,6 @@ document.addEventListener("DOMContentLoaded", async function () {
             event.stopPropagation();
             editDeviceForm.classList.add("was-validated");
         } else {
-            // Inside the form submission logic
             if (document.getElementById("editStatusInput").disabled) {
                 document.getElementById("editStatusInput").disabled = false; // Temporarily enable
             }
@@ -1651,7 +1648,6 @@ document.addEventListener("DOMContentLoaded", async function () {
                 }
             } catch (error) {
                 console.error("Fetch error:", error);
-                // Optionally display a user-friendly error message
             }
         }
     });
