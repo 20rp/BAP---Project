@@ -428,24 +428,6 @@ export function clearAllNotifications() {
     updateNotificationsUI(currentNotifications);
 }
 
-export async function checkForNewNotifications() {
-    try {
-        // Generate fresh notifications
-        const freshNotifications = await generateNotifications();
-
-        // Save to session storage
-        saveNotificationsToSession(freshNotifications);
-
-        // Update the UI with new notifications
-        await updateNotificationsUI(freshNotifications);
-
-        return freshNotifications;
-    } catch (error) {
-        console.error("Failed to refresh notifications:", error);
-        throw error;
-    }
-}
-
 // Modify updateNotificationsUI to accept a forceRefresh parameter
 export async function updateNotificationsUI(
     notifications,

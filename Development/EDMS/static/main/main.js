@@ -21,8 +21,12 @@ export function clearNotificationHandler(deviceId) {
 }
 
 export async function refreshNotificationsHandler() {
-    // Declare refreshButton outside of try to ensure it's accessible in finally
+    console.log("Refreshing notifications..."); // Log to check if it's triggered unexpectedly
+
     const refreshButton = document.getElementById("refreshNotificationsBtn");
+
+    // Disable the button immediately to prevent further clicks while processing
+    if (refreshButton.disabled) return; // Prevent further clicks
 
     try {
         if (refreshButton) {
@@ -35,6 +39,8 @@ export async function refreshNotificationsHandler() {
 
         // Clear session storage to force fresh data
         sessionStorage.removeItem("notifications");
+        sessionStorage.removeItem("clearedNotifications");
+
         // Get fresh notifications and update UI
         await updateNotificationsUI();
     } catch (error) {

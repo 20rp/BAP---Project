@@ -644,6 +644,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (shouldRefresh === "true") {
             sessionStorage.removeItem("shouldRefreshNotifications");
             await refreshAfterChange();
+
+            sessionStorage.setItem("shouldRefreshNotifications", "false");
         } else {
             // Normal initial load
             await updateNotificationsUI();

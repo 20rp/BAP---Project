@@ -1,5 +1,3 @@
-import { refreshNotificationsPreservingCleared } from "./notifications.js";
-
 function formatDate(dateString, options) {
     if (!dateString || dateString === "0001-01-01T00:00:00Z") {
         return "N/A";
