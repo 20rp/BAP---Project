@@ -649,6 +649,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         } else {
             // Normal initial load
             await updateNotificationsUI();
+            sessionStorage.setItem("shouldRefreshNotifications", "false");
         }
     }
 });
